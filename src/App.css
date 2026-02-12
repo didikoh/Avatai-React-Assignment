@@ -7,9 +7,48 @@
     linear-gradient(180deg, #f7f3eb 0%, #e9f0f7 100%);
 }
 
-.todo-app {
-  max-width: 860px;
+.app-frame {
+  max-width: 960px;
   margin: 0 auto;
+}
+
+.site-header {
+  margin-bottom: 1rem;
+  border-radius: 24px;
+  border: 1px solid rgba(26, 34, 46, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 36px rgba(29, 40, 55, 0.12);
+  backdrop-filter: blur(6px);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 0.45rem 0.72rem;
+  border-radius: 10px;
+  border: 1px solid #c9d5e8;
+  color: #304863;
+  background-color: rgba(242, 246, 251, 0.8);
+}
+
+.nav-link-active {
+  background-color: #c9deef;
+  border-color: #7ea7ca;
+  color: #183451;
+}
+
+.todo-app,
+.info-page {
   border-radius: 24px;
   border: 1px solid rgba(26, 34, 46, 0.12);
   background: rgba(255, 255, 255, 0.82);
@@ -17,6 +56,28 @@
   backdrop-filter: blur(6px);
   padding: clamp(1.2rem, 2vw, 2rem);
   animation: rise-in 320ms ease-out;
+}
+
+.info-page h1 {
+  margin: 0 0 0.6rem;
+  color: #1e2b3f;
+}
+
+.info-page p {
+  color: #4f6079;
+}
+
+.info-page ul {
+  margin-top: 0;
+  color: #2e4764;
+}
+
+.secondary-link {
+  display: inline-flex;
+  margin-top: 0.6rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #274a71;
 }
 
 .app-header {
@@ -51,6 +112,16 @@
   margin-bottom: 1rem;
 }
 
+.search-row {
+  margin-bottom: 1rem;
+}
+
+.search-hint {
+  margin: 0.4rem 0 0;
+  color: #4f6079;
+  font-size: 0.9rem;
+}
+
 .todo-input,
 .edit-input {
   width: 100%;
@@ -78,7 +149,10 @@
   border: 1px solid transparent;
   font: inherit;
   cursor: pointer;
-  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease;
 }
 
 .primary-button:active,
@@ -219,6 +293,27 @@
   gap: 0.45rem;
 }
 
+.pagination-shell {
+  margin-top: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.pagination-summary {
+  margin: 0;
+  color: #4f6079;
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
 .state-message {
   margin: 0;
   padding: 1.1rem;
@@ -281,6 +376,11 @@
 }
 
 @media (max-width: 760px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .todo-form {
     flex-direction: column;
   }

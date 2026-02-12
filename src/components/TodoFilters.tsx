@@ -1,5 +1,5 @@
 import type { TodoFilter } from '../types/todo'
-import type { TodoStats } from '../reducers/todoReducer'
+import type { TodoStats } from '../store/todosSlice'
 
 type TodoFiltersProps = {
   activeFilter: TodoFilter
